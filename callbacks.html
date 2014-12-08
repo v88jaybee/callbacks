@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Callbacks</title>
+	<script>
+		var randomName = function() {
+			var name = ['George', 'Mike', 'Joe', 'Ninja'];
+			var randomNum = Math.floor(Math.random() * (3 - 0)) + 0;
+			return name[randomNum];
+		}
+		
+		var say = function(x) {
+		  console.log('Say ', x);
+		}
+
+		var yell = function(x) {
+		  console.log('Yell ', x);
+		}
+
+		var eat = function(x) {
+		  console.log('Eat ', x);
+		}
+
+		var roll = function(x) {
+		  console.log ('Roll ', x);
+		}
+
+		function random_function(a, x, y, z, f) {
+		  // code here to randomly run one of x, y, z, or f using the result of a.
+			var random = Math.floor((Math.random() * 4) + 1);
+		
+		    if(random == 1)
+		   		x(a());
+		    else if(random == 2)
+		   		y(a());
+		  	else if(random == 3)
+		  		z(a());
+		  	else if(random == 4)
+		  		f(a());
+		}
+
+		random_function(randomName, say, yell, eat, roll);
+		// Possible results include:
+		// Roll George
+		// Eat Ninja
+		// Say Mike
+		// Eat George
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
